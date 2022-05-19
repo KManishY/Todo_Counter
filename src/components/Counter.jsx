@@ -1,10 +1,19 @@
 import react, { useState } from "react";
-
-const Counter = () => {
+import "./counter.css";
+const Counter = ({ ab }) => {
       const [count, setCount] = useState(0);
       return (
             <div>
-                  <h1> Counter App :{count} </h1>
+                  {/* <h1>{ab}</h1> */}
+                  <h1>
+                        {" "}
+                        Counter App :
+                        {
+                              <p className={count % 2 == 1 ? "odd" : "even"}>
+                                    {count}
+                              </p>
+                        }{" "}
+                  </h1>
                   <button onClick={() => setCount(count + 1)}>Increment</button>
                   <button
                         onClick={() => {
